@@ -14,11 +14,11 @@ refs.increment.addEventListener("click", onClickAddIncrement);
 
 let counterValue = 0;
 
-function onClickAddDecrement(event) {
+function onClickAddDecrement() {
   counterValue -= 1;
   refs.value.textContent = counterValue;
 }
-function onClickAddIncrement(event) {
+function onClickAddIncrement() {
   counterValue += 1;
   refs.value.textContent = counterValue;
 }
