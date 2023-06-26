@@ -5,8 +5,8 @@ const refs = {
 
 refs.buttonRef.addEventListener("click", onClickChangeColor);
 
-function onClickChangeColor() {
-  refs.colorRef.textContent = getRandomHexColor();
+function onClickChangeColor(event) {
+  event.currentTarget.textContent = getRandomHexColor();
   document.body.style.backgroundColor = getRandomHexColor();
 }
 
