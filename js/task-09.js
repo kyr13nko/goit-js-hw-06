@@ -1,12 +1,12 @@
 const refs = {
-  colorRef: document.querySelector(".color"),
-  buttonRef: document.querySelector(".change-color"),
+  color: document.querySelector(".color"),
+  button: document.querySelector(".change-color"),
 };
 
-refs.buttonRef.addEventListener("click", onClickChangeColor);
+refs.button.addEventListener("click", onClickChangeColor);
 
-function onClickChangeColor(event) {
-  event.currentTarget.textContent = getRandomHexColor();
+function onClickChangeColor() {
+  refs.color.textContent = getRandomHexColor();
   document.body.style.backgroundColor = getRandomHexColor();
 }
 
