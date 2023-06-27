@@ -28,7 +28,8 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  return (refs.boxes.innerHTML = "");
+  refs.boxes.innerHTML = "";
+  refs.input.value = 0;
 }
 
 function getRandomHexColor() {
