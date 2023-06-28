@@ -9,22 +9,12 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector("#ingredients");
 
-// ВАРІАНТ 1
-ingredients.map((ingredient) => {
-  const itemRef = document.createElement("li");
-  itemRef.textContent = ingredient;
-  itemRef.classList.add("item");
-  ingredientsRef.append(itemRef);
+const itemRef = ingredients.map((ingredient) => {
+  const item = document.createElement("li");
+  item.textContent = ingredient;
+  item.classList.add("item");
 
-  console.log("itemRef:", itemRef);
+  return item;
 });
 
-// ВАРІАНТ 2
-/* ingredients.forEach((item) => {
-  const itemRef = document.createElement("li");
-  itemRef.textContent = item;
-  itemRef.classList.add("item");
-  ingredientsRef.append(itemRef);
-
-  console.log("itemRef:", itemRef);
-}); */
+ingredientsRef.append(...itemRef);
