@@ -11,19 +11,26 @@ refs.btnDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
   amount = refs.input.value;
+  const divRefArr = [];
 
-  for (let i = 0; i < amount; i += 1) {
-    const divRef = document.createElement("div");
+  if (amount >= Number(refs.input.min) && amount <= Number(refs.input.max)) {
+    for (let i = 0; i < amount; i += Number(refs.input.step)) {
+      const divRef = document.createElement("div");
 
-    divRef.style.backgroundColor = getRandomHexColor();
-    divRef.style.height = `${30 + i * 10}px`;
-    divRef.style.width = `${30 + i * 10}px`;
-    divRef.style.margin = "10px";
+      divRef.style.backgroundColor = getRandomHexColor();
+      divRef.style.height = `${30 + i * 10}px`;
+      divRef.style.width = `${30 + i * 10}px`;
+      divRef.style.margin = "10px";
+
+      divRefArr.push(divRef);
+    }
+
+    refs.boxes.append(...divRefArr);
 
     refs.boxes.style.display = "flex";
     refs.boxes.style.flexWrap = "wrap";
-
-    refs.boxes.append(divRef);
+  } else {
+    alert("Дані за межами ліміту");
   }
 }
 
